@@ -20,9 +20,12 @@ WORKDIR /app
 COPY --chown=active_workflow ./ /app/
 
 # Run the script to prepare the application
-RUN su active_workflow -c 'docker/scripts/prepare_app'
+WORKDIR /app/docker/scripts
+RUN  chmod +x prepare_app \
+    && ./prepare_app
 
 # Expose port 3000
+WORKDIR /app
 EXPOSE 3000
 
 # Copy initialization script
