@@ -7,7 +7,7 @@ RUN /scripts/prepare_os
 # Install dependencies, including the V8 development headers
 RUN apt-get update && apt-get install -y \
     build-essential \
-    libv8-dev \
+    libv8-dev
     # Add any other dependencies here
 
 # Create a volume for PostgreSQL data
