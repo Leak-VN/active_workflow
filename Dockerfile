@@ -21,9 +21,7 @@ COPY --chown=active_workflow ./ /app/
 
 # Run the script to prepare the application
 WORKDIR /app/docker/scripts
-RUN  chmod +x prepare_app \
-    && ./prepare_app
-
+RUN  /bin/bash prepare_app
 # Expose port 3000
 WORKDIR /app
 EXPOSE 3000
